@@ -1,0 +1,23 @@
+name: Hello world
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup CentOS
+        uses: actions/setup-container@v2
+        with:
+          image: centos:latest
+
+      - name: Run
+        run: |
+          echo "Hello world"
