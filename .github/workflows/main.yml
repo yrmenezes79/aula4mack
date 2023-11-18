@@ -1,23 +1,10 @@
-name: Hello world
-
+name: DemoNewCD
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup CentOS
-        uses: actions/setup-container@v2
-        with:
-          image: centos:latest
-
-      - name: Run
-        run: |
-          echo "Hello world"
+      - name: Run a one-line script
+        run: echo Hello, world!
